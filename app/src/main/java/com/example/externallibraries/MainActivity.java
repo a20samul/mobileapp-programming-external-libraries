@@ -1,14 +1,24 @@
 package com.example.externallibraries;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
+
+
+public class MainActivity extends AhoyOnboarderActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        showNavigationControls(true);
+        setGradientBackground();
+
+    }
+
+    @Override
+    public void onFinishButtonPressed() {
+        Toast.makeText(this, "Bra jobbat!", Toast.LENGTH_SHORT).show();
     }
 }
